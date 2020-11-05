@@ -1,5 +1,5 @@
 #include "Entity.h"
-
+#include <iostream>
 Entity::Entity()
 {
 
@@ -34,6 +34,21 @@ void Entity::setDist(float _distx,float _disty)
     distxy.x = _distx;
     distxy.y = _disty;
 }
+void Entity::increaseDist(float _distx,float _disty,unsigned short int type)
+{
+    if(type==1)
+    {
+        distxy.x += _distx;
+        distxy.y += _disty;
+    }else
+    {
+            if(type==2)
+        {
+            distxy.x *= _distx;
+            distxy.y *= _disty;
+        }
+    }
+}
 
 sf::Vector2f Entity::getDistxy()
 {
@@ -51,6 +66,34 @@ sf::Vector2f Entity::getPos()
 {
     return pos;
 }
+///--------------------POS---------------------
+void Entity::updatePos(float _x,float _y)
+{
+    pos.x+=_x;
+    pos.y+=_y;
+}
+
+///--------------------ANGLE-------------------
+
+void Entity::setAngle(float _angle)
+{
+    angle=_angle;
+}
+
+float Entity::getAngle()
+{
+    return angle;
+}
+
+void Entity::rotatexd(float rotation)
+{
+    angle+=rotation;
+    angle=(float)((int)angle%360);
+    if(angle>360){
+        angle+=360;
+    }
+}
+
 
 ///--------------------NAME--------------------
 void Entity::setName(std::string _name)
@@ -67,12 +110,12 @@ std::string Entity::getName()
 void Entity::draw(sf::RenderWindow &app)
    {
      anim.sprite.setPosition(pos.x,pos.y);
-     ///anim.sprite.setRotation(angle+90);
+     anim.sprite.setRotation(angle+90);
      app.draw(anim.sprite);
 
-     /*CircleShape circle(R);
-     circle.setFillColor(Color(255,0,0,170));
-     circle.setPosition(x,y);
-     circle.setOrigin(R,R);
+     /*sf::CircleShape circle(radius);
+     circle.setFillColor(sf::Color(255,0,0,170));
+     circle.setPosition(pos.x,pos.y);
+     circle.setOrigin(radius,radius);
      app.draw(circle);*/
    }

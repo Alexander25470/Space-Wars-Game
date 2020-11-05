@@ -77,29 +77,17 @@ void Menu::eventListener(){
             {
 
                 if(text[0].getGlobalBounds().contains(mousePos.x,mousePos.y))
-                {
                     text[0].setColor(sf::Color::Green);
-                }else{
+                else
                     text[0].setColor(sf::Color::White);
-                }
-
                 if(text[1].getGlobalBounds().contains(mousePos.x,mousePos.y))
-                {
                     text[1].setColor(sf::Color::Green);
-                    //Game partida_l(width,height,window1);
-                }else{
+                else
                     text[1].setColor(sf::Color::White);
-                }
-
-                if(text[2].getGlobalBounds().contains(mousePos.x,mousePos.y))
-                {
+                if (text[2].getGlobalBounds().contains(mousePos.x,mousePos.y))
                     text[2].setColor(sf::Color::Green);
-                    //Game partida_l(width,height,window1);
-                }else{
+                else
                     text[2].setColor(sf::Color::White);
-                }
-
-
 
             }
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && text[0].getGlobalBounds().contains(mousePos.x,mousePos.y))
@@ -128,6 +116,5 @@ void Menu::drawWindow()
     window1.draw(text[0]);
     window1.draw(text[1]);
     window1.draw(text[2]);
-
     window1.display();
 }

@@ -3,12 +3,12 @@
 
 Asteroid::Asteroid()
 {
-    int x=rand()%8-4;
-    int y=rand()%8-4;
-    while(x==0){
+    float x=rand()%8-4;
+    float y=rand()%8-4;
+    while((int)x==0){
         x=rand()%8-4;
     }
-    while(y==0){
+    while((int)y==0){
         y=rand()%8-4;
     }
 

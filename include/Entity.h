@@ -4,13 +4,12 @@
 
 class Entity
 {   private:
-        float angle, radius;
+        float angle;
+        float radius;
         sf::Vector2f distxy;
         bool life;
         std::string name;
         sf::Vector2f pos;
-
-
     public:
         Animation anim;
         Entity();
@@ -23,13 +22,20 @@ class Entity
         sf::Vector2f getPos();
         ///--------------------------------------------
         void setDist(float,float);
+        void increaseDist(float,float,unsigned short int=1);
         sf::Vector2f getDistxy();
+        ///--------------------------------------------
+        void setAngle(float);
+        float getAngle();
+        void rotatexd(float);
         ///--------------------------------------------
         void setName(std::string);
         std::string getName();
         ///--------------------------------------------
         virtual void update(){};
         void draw(sf::RenderWindow &app);
+        ///--------------------------------------------
+        void updatePos(float,float);
 
 
 };

@@ -23,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=gnu++11" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
@@ -42,20 +43,21 @@
 		</Linker>
 		<Unit filename="include/Animation.h" />
 		<Unit filename="include/Asteroid.h" />
+		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Ship.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Asteroid.cpp" />
+		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Ship.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
-			<code_completion />
-			<envvars />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

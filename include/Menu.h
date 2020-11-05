@@ -1,5 +1,4 @@
-#ifndef MENU_H
-#define MENU_H
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 #include "Game.h"
@@ -20,5 +19,3 @@ public:
     void eventListener();
     void drawWindow();
 };
-
-#endif // MENU_H
