@@ -3523,7 +3523,7 @@
 	<SFML/Graphics.hpp>
 	<time.h>
 
-1604425359 c:\users\usuario\desktop\juego 2\juego\include\entity.h
+1604581891 c:\users\usuario\desktop\juego 2\juego\include\entity.h
 	<SFML/Graphics.hpp>
 	"Animation.h"
 
@@ -3548,20 +3548,20 @@
 1604097392 source:c:\users\usuario\desktop\juego 2\juego\src\asteroid.cpp
 	"Asteroid.h"
 
-1604356114 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
+1604581902 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
 	"Bullet.h"
 
-1604358135 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
+1604581886 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
 	"Entity.h"
 	<iostream>
 
-1604332091 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
+1604429617 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
 	"Game.h"
 
 1604331121 source:c:\users\usuario\desktop\juego 2\juego\src\menu.cpp
 	"Menu.h"
 
-1604356114 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
+1604581915 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
 	"Ship.h"
 	<math.h>
 	<iostream>

@@ -27,7 +27,7 @@ void Ship::advanceShip(bool _move)
 
      }
 
-    updatePos(getDistxy().x,getDistxy().y);
+    updatePos();
     sf::Vector2f _Pos = getPos();
     if(_Pos.x>1280/*width*/) setPos(0, _Pos.y);
     if(_Pos.y>720/*height*/) setPos(_Pos.x,0);

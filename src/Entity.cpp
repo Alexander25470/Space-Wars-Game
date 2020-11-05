@@ -67,10 +67,10 @@ sf::Vector2f Entity::getPos()
     return pos;
 }
 ///--------------------POS---------------------
-void Entity::updatePos(float _x,float _y)
+void Entity::updatePos()
 {
-    pos.x+=_x;
-    pos.y+=_y;
+    pos.x+=distxy.x;
+    pos.y+=distxy.y;
 }
 
 ///--------------------ANGLE-------------------

@@ -35,7 +35,7 @@ class Entity
         virtual void update(){};
         void draw(sf::RenderWindow &app);
         ///--------------------------------------------
-        void updatePos(float,float);
+        void updatePos();
 
 
 };
