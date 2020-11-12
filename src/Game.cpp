@@ -37,7 +37,7 @@ Game::Game(short int _width, short int _height,sf::RenderWindow &_window1):windo
     {
       Asteroid *a = new Asteroid();
       a->initializer(asteroidAnim, rand()%width, rand()%height, rand()%360, 25);
-      asts.push_back(a);
+      entities.push_back(a);
     }
 
     shipTexture.loadFromFile("images/ship.png");
@@ -45,13 +45,15 @@ Game::Game(short int _width, short int _height,sf::RenderWindow &_window1):windo
     shipAnim = Animation(shipTexture,40,0,40,40,1,0);
     shipAnim_M = Animation(shipTexture_M,40,40,40,40,1,0);
 
-    ship.initializer(shipAnim,(width/2),(height/2),0,20);
+    ship=new Ship();
+    ship->initializer(shipAnim,(width/2),(height/2),0,20);
+    entities.push_back(ship);
 
     gameLoop();
 
 
-    for(auto asts1:asts){ ///en esta parte auto le asigna el tipo *Asteroid
-        delete (asts1);
+    for(auto entity:entities){ ///en esta parte auto le asigna el tipo *Asteroid
+        delete (entity);
     }
 }
 
@@ -63,19 +65,13 @@ void Game::gameLoop() {
         //int asd=fps.getFps();
         frameTime=getFrameTime();
 
-        gotoxy(0,0);std::cout<<"                                                            ";
-        gotoxy(0,0);std::cout<<"frametime: "<< frameTime*1000<<"ms Fps: "<< (int)(1/frameTime) <<std::endl;
+        /*gotoxy(0,0);std::cout<<"                                                            ";
+        gotoxy(0,0);std::cout<<"frametime: "<< frameTime*1000<<"ms Fps: "<< (int)(1/frameTime) <<std::endl;*/
 
         //aca hacer que pasen las cosas que pasan
 
-        for(auto asts1:asts){
-        asts1->update();
-        asts1->anim.update();
-        }
 
-
-
-        for(auto i=bullets.begin();i!=bullets.end();)
+        for(auto i=entities.begin();i!=entities.end();)
         {
           Entity *e = *i;
 
@@ -84,18 +80,44 @@ void Game::gameLoop() {
 
             if (e->getLife()==0)
             {
-                i=bullets.erase(i);
+                i=entities.erase(i);
                 delete e;
-                //std::cout<<"bala eliminada"<<std::endl;
             }
           else i++;
+        }
+
+        for(auto a:entities){
+                for(auto b:entities)
+                {
+                    if( a->getName().compare("asteroid")==0 && b->getName().compare("bullet")==0 )
+                    {
+                        if( isCollide(a,b) )
+                        {
+                            std::cout<<"colision";
+                            a->setLife(0);
+                            b->setLife(0);
+                        }
+
+                    }
+                    if( a->getName().compare("asteroid")==0 && b->getName().compare("player")==0 )
+                    {
+                        if( isCollide(a,b) )
+                        {
+                            std::cout<<"colision";
+                            a->setLife(0);
+                            //b->setLife(0);
+                        }
+
+                    }
+                }
         }
 
 
 
 
 
-        ship.update();
+
+        //ship->update();
 
 
         drawWindow();
@@ -108,15 +130,12 @@ void Game::drawWindow(){
 
     window1.draw(background);
 
-    for(auto asts1:asts){
-        asts1->draw(window1);
-    }
-    for(auto bullet:bullets){
-        bullet->draw(window1);
+    for(auto entity:entities){
+        entity->draw(window1);
     }
 
 
-    ship.draw(window1);
+    //ship->draw(window1);
 
     window1.display();
 }
@@ -132,48 +151,44 @@ void Game::eventListener() {
         //aca comprobar lo que pasa
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
-            ship.rotatexd(3);
+            ship->rotatexd(3);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
-            ship.rotatexd(-3);
+            ship->rotatexd(-3);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
         {
-            ship.advanceShip(true);
-            ship.anim=shipAnim_M;
+            ship->advanceShip(true);
+            ship->anim=shipAnim_M;
         }else
         {
-            (ship.advanceShip(false),ship.anim=shipAnim);
+            (ship->advanceShip(false),ship->anim=shipAnim);
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
-            ship.setAngle(270);
+            ship->setAngle(270);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
-            ship.setAngle(90);
+            ship->setAngle(90);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
-            ship.setAngle(0);
+            ship->setAngle(0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
-            ship.setAngle(180);
+            ship->setAngle(180);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
         {
             Bullet *b = new Bullet;
-            b->initializer(bulletAnim,ship.getPos().x,ship.getPos().y,ship.getAngle(),10);
-            bullets.push_back(b);
+            b->initializer(bulletAnim,ship->getPos().x,ship->getPos().y,ship->getAngle(),10);
+            entities.push_back(b);
 
         }
-        /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            yCircle+=10.0f;
-        }*/
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {
             gameOver=true;
@@ -190,8 +205,8 @@ float Game::getFrameTime(){
 
 bool Game::isCollide(Entity *a,Entity *b)
 {
-    float dDifX = (a->getDistxy().x - b->getDistxy().x);
-    float dDifY = (a->getDistxy().y - b->getDistxy().y);
+    float dDifX = (a->getPos().x - b->getPos().x);
+    float dDifY = (a->getPos().y - b->getPos().y);
     float distancia = sqrt( pow(dDifX,2) + pow(dDifY,2) );
-    return distancia < (a->getAngle() + b->getAngle());
+    return distancia < (a->getRadius() + b->getRadius());
 }

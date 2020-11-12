@@ -48,7 +48,6 @@ Menu::Menu(short int _width, short int _height, std::string title):window1(sf::V
 void Menu::gameLoop(){
     while(window1.isOpen()){
 
-
         eventListener();
         //std::cout<<((int)j)<<std::endl<<" "<<((int)k)<<std::endl;
         //sf::Sprite asd(backgroundTexture,sf::IntRect(((int)j)*1500,((int)k)*900,1500,900));

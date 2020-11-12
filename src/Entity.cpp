@@ -93,8 +93,12 @@ void Entity::rotatexd(float rotation)
         angle+=360;
     }
 }
-
-
+///--------------------RADIUS------------------
+float Entity::getRadius()
+{
+    //std::cout<<"radio a: "<<radius<<std::endl;
+    return radius;
+}
 ///--------------------NAME--------------------
 void Entity::setName(std::string _name)
 {

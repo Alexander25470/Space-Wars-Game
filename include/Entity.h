@@ -18,6 +18,8 @@ class Entity
         void setLife(bool _life);
         bool getLife();
         ///--------------------------------------------
+        float getRadius();
+        ///--------------------------------------------
         void setPos(float,float);
         sf::Vector2f getPos();
         ///--------------------------------------------

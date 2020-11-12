@@ -25,12 +25,12 @@ class Game {
 
     sf::Texture asteroidTexture;
     Animation asteroidAnim;
-    std::vector<Asteroid*> asts;
     sf::Texture bulletTexture;
     Animation bulletAnim;
-    std::list<Bullet*> bullets;
 
-    Ship ship;
+    std::vector<Entity*> entities;
+
+    Ship *ship;
 
     sf::Texture shipTexture,shipTexture_M;
     Animation shipAnim,shipAnim_M;

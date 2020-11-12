@@ -12,6 +12,7 @@ class Ship: public Entity
     public:
         Ship();
         void advanceShip(bool);
+        void update();
 
 
 };

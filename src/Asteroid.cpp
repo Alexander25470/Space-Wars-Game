@@ -18,7 +18,6 @@ Asteroid::Asteroid()
 
 void Asteroid::update()
 {
-    anim.update();
 
     sf::Vector2f _Pos = getPos();
 

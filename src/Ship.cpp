@@ -24,14 +24,15 @@ void Ship::advanceShip(bool _move)
     if (speed>maxSpeed)
      {
          increaseDist(maxSpeed/speed,maxSpeed/speed,2);
-
      }
 
+}
+void Ship::update()
+{
     updatePos();
     sf::Vector2f _Pos = getPos();
     if(_Pos.x>1280/*width*/) setPos(0, _Pos.y);
     if(_Pos.y>720/*height*/) setPos(_Pos.x,0);
     if(_Pos.x<0) setPos(1280, _Pos.y);
     if(_Pos.y<0) setPos(_Pos.x,720);
-
 }
