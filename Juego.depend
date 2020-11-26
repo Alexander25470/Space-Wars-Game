@@ -3094,12 +3094,12 @@
 1604327816 source:c:\users\usuario\desktop\juego\juego\src\bullet.cpp
 	"Bullet.h"
 
-1604270632 source:c:\users\usuario\desktop\juego 2\juego\main.cpp
+1605563795 source:c:\users\usuario\desktop\juego 2\juego\main.cpp
 	"Game.h"
 	"Menu.h"
 	<iostream>
 
-1604425399 c:\users\usuario\desktop\juego 2\juego\include\game.h
+1606336504 c:\users\usuario\desktop\juego 2\juego\include\game.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<SFML/System/Clock.hpp>
@@ -3108,6 +3108,7 @@
 	<list>
 	"Ship.h"
 	"Bullet.h"
+	"EnemyShip.h"
 
 1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -3523,46 +3524,70 @@
 	<SFML/Graphics.hpp>
 	<time.h>
 
-1604581891 c:\users\usuario\desktop\juego 2\juego\include\entity.h
+1605626741 c:\users\usuario\desktop\juego 2\juego\include\entity.h
 	<SFML/Graphics.hpp>
 	"Animation.h"
+	<math.h>
 
 1603580287 c:\users\usuario\desktop\juego 2\juego\include\animation.h
 	<SFML/Graphics.hpp>
 
-1604101024 c:\users\usuario\desktop\juego 2\juego\include\ship.h
+1604600326 c:\users\usuario\desktop\juego 2\juego\include\ship.h
 	<Entity.h>
 	<SFML/Graphics.hpp>
 
 1604326539 c:\users\usuario\desktop\juego 2\juego\include\bullet.h
 	<Entity.h>
 
-1604331157 c:\users\usuario\desktop\juego 2\juego\include\menu.h
+1606337066 c:\users\usuario\desktop\juego 2\juego\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/System/Clock.hpp>
 	"Game.h"
+	"SelectableItem.h"
 
 1603579059 source:c:\users\usuario\desktop\juego 2\juego\src\animation.cpp
 	"Animation.h"
 
-1604097392 source:c:\users\usuario\desktop\juego 2\juego\src\asteroid.cpp
+1606049424 source:c:\users\usuario\desktop\juego 2\juego\src\asteroid.cpp
 	"Asteroid.h"
+	<SFML/Graphics.hpp>
+	<iostream>
 
-1604581902 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
+1605186669 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
 	"Bullet.h"
 
-1604581886 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
+1605822153 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
 	"Entity.h"
 	<iostream>
+	<cmath>
+	<math.h>
 
-1604429617 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
+1606336883 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
 	"Game.h"
 
-1604331121 source:c:\users\usuario\desktop\juego 2\juego\src\menu.cpp
+1606337067 source:c:\users\usuario\desktop\juego 2\juego\src\menu.cpp
 	"Menu.h"
 
-1604581915 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
+1605621581 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
 	"Ship.h"
+	<iostream>
+
+1605826354 c:\users\usuario\desktop\juego 2\juego\include\enemyship.h
+	<Entity.h>
+	<SFML/Graphics.hpp>
+	<windows.h>
+
+1606328517 source:c:\users\usuario\desktop\juego 2\juego\src\enemyship.cpp
+	"EnemyShip.h"
 	<math.h>
 	<iostream>
+	<cstdlib>
+	<cmath>
+	<math.h>
+
+1606334049 source:c:\users\usuario\desktop\juego 2\juego\src\selectableitem.cpp
+	"SelectableItem.h"
+
+1606333423 c:\users\usuario\desktop\juego 2\juego\include\selectableitem.h
+	<SFML/Graphics.hpp>
 

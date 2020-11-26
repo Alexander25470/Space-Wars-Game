@@ -7,11 +7,13 @@
 #include <list>
 #include "Ship.h"
 #include "Bullet.h"
+#include "EnemyShip.h"
 
 
 
 class Game {
     int width,height;
+    unsigned long int time;
     sf::RenderWindow &window1;
     //sf::CircleShape shape;
     sf::Sprite background;
@@ -27,13 +29,17 @@ class Game {
     Animation asteroidAnim;
     sf::Texture bulletTexture;
     Animation bulletAnim;
+    sf::Texture enemyBulletTexture;
+    Animation enemyBulletAnim;
+
 
     std::vector<Entity*> entities;
 
     Ship *ship;
+    EnemyShip *enemyShip;
 
-    sf::Texture shipTexture,shipTexture_M;
-    Animation shipAnim,shipAnim_M;
+    sf::Texture shipTexture, shipTexture_M, enemyShipTexture, enemyShipTexture_M;
+    Animation shipAnim, shipAnim_M, enemyShipAnim, enemyShipAnim_M;
 
 
 

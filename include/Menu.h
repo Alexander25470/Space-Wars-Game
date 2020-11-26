@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Clock.hpp>
 #include "Game.h"
+#include "SelectableItem.h"
+
 
 class Menu
 {
@@ -11,8 +13,12 @@ class Menu
     sf::Event event;
     sf::Sprite background;
     sf::Texture backgroundTexture;
-    //sf::Font font;
-    sf::Text *text;
+    SelectableItem quit;
+    SelectableItem play;
+    SelectableItem options;
+
+
+
 public:
     Menu(short int width,short int height, std::string title);
     void gameLoop();

@@ -1,5 +1,4 @@
 #include "Ship.h"
-#include <math.h>
 #include <iostream>
 Ship::Ship()
 {
@@ -11,7 +10,7 @@ void Ship::advanceShip(bool _move)
 {
     if(_move)
     {
-        increaseDist(cos(getAngle()*(M_PI/180))*0.1,sin(getAngle()*(M_PI/180))*0.1);
+        increaseDist(cos(getAngle()*(MATH_PI/180))*0.1,sin(getAngle()*(MATH_PI/180))*0.1);
 
     }
     else
@@ -27,6 +26,7 @@ void Ship::advanceShip(bool _move)
      }
 
 }
+
 void Ship::update()
 {
     updatePos();

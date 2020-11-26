@@ -1,5 +1,6 @@
 #include "Asteroid.h"
-
+#include <SFML/Graphics.hpp>
+#include <iostream>
 
 Asteroid::Asteroid()
 {
@@ -16,18 +17,18 @@ Asteroid::Asteroid()
     setName("asteroid");
 }
 
+
 void Asteroid::update()
 {
 
     sf::Vector2f _Pos = getPos();
 
-    setPos(getDistxy().x+_Pos.x,getDistxy().y+_Pos.y);
+    updatePos();
 
     if(_Pos.x>1280/*width*/) setPos(0, _Pos.y);
     if(_Pos.y>720/*height*/) setPos(_Pos.x,0);
     if(_Pos.x<0) setPos(1280, _Pos.y);
     if(_Pos.y<0) setPos(_Pos.x,720);
-
 
 
 }

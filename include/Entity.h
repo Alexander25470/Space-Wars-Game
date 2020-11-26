@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
+#include <math.h>
+const double MATH_PI = std::atan(1)*4;
 
 class Entity
 {   private:

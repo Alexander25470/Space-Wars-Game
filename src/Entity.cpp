@@ -1,5 +1,7 @@
 #include "Entity.h"
 #include <iostream>
+#include <cmath>
+#include <math.h>
 Entity::Entity()
 {
 
@@ -88,8 +90,8 @@ float Entity::getAngle()
 void Entity::rotatexd(float rotation)
 {
     angle+=rotation;
-    angle=(float)((int)angle%360);
-    if(angle>360){
+    angle=fmodf(angle,360);
+    if(angle<0){
         angle+=360;
     }
 }

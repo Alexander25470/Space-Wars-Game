@@ -11,6 +11,7 @@ void gotoxy(int x, int y) {
 
 Game::Game(short int _width, short int _height,sf::RenderWindow &_window1):window1(_window1)
 {
+    time=0;
     gameOver=false;
     ///window1=_window1;
     width=_width;
@@ -30,24 +31,38 @@ Game::Game(short int _width, short int _height,sf::RenderWindow &_window1):windo
     bulletTexture.loadFromFile("images/fire_blue.png");
     bulletAnim=Animation(bulletTexture,0,0,32,64, 16, 0.8);
 
+    enemyBulletTexture.loadFromFile("images/fire_red.png");
+    enemyBulletAnim=Animation(enemyBulletTexture,0,0,32,64, 16, 0.8);
 
 
 
-    for(int i=0;i<15;i++)
+
+
+    for(int i=0;i<8;i++)
     {
       Asteroid *a = new Asteroid();
       a->initializer(asteroidAnim, rand()%width, rand()%height, rand()%360, 25);
       entities.push_back(a);
     }
 
-    shipTexture.loadFromFile("images/ship.png");
-    shipTexture_M.loadFromFile("images/ship.png");
-    shipAnim = Animation(shipTexture,40,0,40,40,1,0);
-    shipAnim_M = Animation(shipTexture_M,40,40,40,40,1,0);
+    shipTexture.loadFromFile("images/ship01.png");
+    shipTexture_M.loadFromFile("images/ship01.png");
+    shipAnim = Animation(shipTexture,38,0,40,52,1,0);
+    shipAnim_M = Animation(shipTexture_M,38,53,40,52,1,0);
+
+    enemyShipTexture.loadFromFile("images/ship.png");
+    enemyShipTexture_M.loadFromFile("images/ship.png");
+    enemyShipAnim = Animation(enemyShipTexture,40,0,40,40,1,0);
+    enemyShipAnim_M = Animation(enemyShipTexture_M,40,40,40,40,1,0);
 
     ship=new Ship();
     ship->initializer(shipAnim,(width/2),(height/2),0,20);
     entities.push_back(ship);
+
+
+    enemyShip = new EnemyShip(ship);
+    enemyShip->initializer(enemyShipAnim_M, (width/2),(height/2),enemyShip->getAngle(), 20);
+    entities.push_back(enemyShip);
 
     gameLoop();
 
@@ -62,6 +77,7 @@ void Game::gameLoop() {
     {
 
         eventListener();
+        time++;
         //int asd=fps.getFps();
         frameTime=getFrameTime();
 
@@ -69,6 +85,28 @@ void Game::gameLoop() {
         gotoxy(0,0);std::cout<<"frametime: "<< frameTime*1000<<"ms Fps: "<< (int)(1/frameTime) <<std::endl;*/
 
         //aca hacer que pasen las cosas que pasan
+
+        if(time%150==0)
+        {
+            for(int i=0;i<3;i++)
+                {
+                  Asteroid *a = new Asteroid();
+                  a->initializer(asteroidAnim, (rand()%width)+width, (rand()%height)+height, rand()%360, 25);
+                  entities.push_back(a);
+                }
+        }
+
+
+        if(enemyShip->isPointingTarget())
+        {
+            std::cout<<"true"<<std::endl;
+            Bullet *f = new Bullet();
+            f->initializer(enemyBulletAnim,enemyShip->getPos().x,enemyShip->getPos().y,enemyShip->getAngle(),10);
+            entities.push_back(f);
+        }else
+        {
+            std::cout<<"false"<<std::endl;
+        }
 
 
         for(auto i=entities.begin();i!=entities.end();)
@@ -82,6 +120,7 @@ void Game::gameLoop() {
             {
                 i=entities.erase(i);
                 delete e;
+
             }
           else i++;
         }
@@ -118,8 +157,6 @@ void Game::gameLoop() {
 
 
         //ship->update();
-
-
         drawWindow();
 
     }
@@ -193,7 +230,10 @@ void Game::eventListener() {
         {
             gameOver=true;
         }
-
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
+        {
+            std::cout<<ship->getAngle();
+        }
 
 }
 

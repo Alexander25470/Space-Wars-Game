@@ -7,7 +7,7 @@ Bullet::Bullet()
 
 void Bullet::update()
 {
-    setDist(cos(getAngle()*(M_PI/180))*10,sin(getAngle()*(M_PI/180))*10);
+    setDist(cos(getAngle()*(MATH_PI/180))*10,sin(getAngle()*(MATH_PI/180))*10);
 
     updatePos();
     sf::Vector2f _Pos = getPos();
