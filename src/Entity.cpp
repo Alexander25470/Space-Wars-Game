@@ -9,14 +9,15 @@ life=1;
 
 }
 
-void Entity::initializer(Animation &_anim, int _x,int _y, float _angle,int _radius)
+void Entity::initializer(int w, int h,Animation &_anim, int _x,int _y, float _angle,int _radius)
 {
     anim = _anim;
     pos.x =_x; ///posicion en x
     pos.y = _y; /// posicion en y
     angle = _angle; /// angulo donde mira
     radius = _radius; /// radio del objeto
-
+    width=w;
+    height=h;
 }
 
 ///-----------------LIFE----------------------
@@ -114,14 +115,19 @@ std::string Entity::getName()
 
 ///--------------------DRAW--------------------
 void Entity::draw(sf::RenderWindow &app)
-   {
-     anim.sprite.setPosition(pos.x,pos.y);
-     anim.sprite.setRotation(angle+90);
-     app.draw(anim.sprite);
+{
+ getAnim().getSprite().setPosition(pos.x,pos.y);
+ getAnim().getSprite().setRotation(angle+90);
+ app.draw(getAnim().getSprite());
 
-     /*sf::CircleShape circle(radius);
-     circle.setFillColor(sf::Color(255,0,0,170));
-     circle.setPosition(pos.x,pos.y);
-     circle.setOrigin(radius,radius);
-     app.draw(circle);*/
-   }
+ /*sf::CircleShape circle(radius);
+ circle.setFillColor(sf::Color(255,0,0,170));
+ circle.setPosition(pos.x,pos.y);
+ circle.setOrigin(radius,radius);
+ app.draw(circle);*/
+}
+
+Animation &Entity::getAnim()
+{
+    return anim;
+}

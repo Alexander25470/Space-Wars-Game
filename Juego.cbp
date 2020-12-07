@@ -41,6 +41,7 @@
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
+			<Add library="sfml-audio" />
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Animation.h" />
@@ -50,7 +51,7 @@
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Menu.h" />
-		<Unit filename="include/SelectableItem.h" />
+		<Unit filename="include/SelectableText.h" />
 		<Unit filename="include/Ship.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Animation.cpp" />
@@ -60,7 +61,7 @@
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Menu.cpp" />
-		<Unit filename="src/SelectableItem.cpp" />
+		<Unit filename="src/SelectableText.cpp" />
 		<Unit filename="src/Ship.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

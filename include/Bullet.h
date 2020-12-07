@@ -1,10 +1,11 @@
 #pragma once
-#include <Entity.h>
+#include "Entity.h"
 
 class Bullet: public Entity
 {
+    bool _isEnemy;
     public:
-        Bullet();
+        Bullet(bool isEnemy=false);
         void update();
 
 };

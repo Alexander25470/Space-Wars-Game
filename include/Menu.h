@@ -1,27 +1,45 @@
 #pragma once
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <SFML/System/Clock.hpp>
 #include "Game.h"
-#include "SelectableItem.h"
+#include "SelectableText.h"
 
 
 class Menu
 {
+    const int vol=5;
+    SelectableText backButton;
+    sf::Font font;
     int width,height;
     float j,k;
     sf::RenderWindow window1;
     sf::Event event;
-    sf::Sprite background;
+    sf::RectangleShape background;
     sf::Texture backgroundTexture;
-    SelectableItem quit;
-    SelectableItem play;
-    SelectableItem options;
-
-
-
-public:
-    Menu(short int width,short int height, std::string title);
+    sf::Sound shotSound;
+    bool fullScreenn;
+    void loadConfig();
+    std::string language;
+    SelectableText playText;
+    SelectableText highScoreText;
+    SelectableText optionsText;
+    SelectableText exitText;
     void gameLoop();
     void eventListener();
     void drawWindow();
+    void optionsMenu();
+    void highScoreMenu();
+    void changeResolution(int&, int&, bool);
+    int readHighestScore();
+
+public:
+    Menu(/*short int width*/);
+    void initializer();
+
 };

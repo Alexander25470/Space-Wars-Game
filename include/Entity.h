@@ -12,10 +12,14 @@ class Entity
         bool life;
         std::string name;
         sf::Vector2f pos;
-    public:
         Animation anim;
+    protected:
+        int width, height;
+    public:
+
         Entity();
-        void initializer(Animation &_anim, int _x,int _y, float _angle=0,int _radius=1);
+        Animation &getAnim();
+        void initializer(int w, int h,Animation &_anim, int _x,int _y, float _angle=0,int _radius=1);
         ///--------------------------------------------
         void setLife(bool _life);
         bool getLife();
