@@ -5,19 +5,18 @@
 Entity::Entity()
 {
 
-life=1;
-
+    life = 1;
 }
 
-void Entity::initializer(int w, int h,Animation &_anim, int _x,int _y, float _angle,int _radius)
+void Entity::initializer(int w, int h, Animation &_anim, int _x, int _y, float _angle, int _radius)
 {
     anim = _anim;
-    pos.x =_x; ///posicion en x
-    pos.y = _y; /// posicion en y
-    angle = _angle; /// angulo donde mira
+    pos.x = _x;       ///posicion en x
+    pos.y = _y;       /// posicion en y
+    angle = _angle;   /// angulo donde mira
     radius = _radius; /// radio del objeto
-    width=w;
-    height=h;
+    width = w;
+    height = h;
 }
 
 ///-----------------LIFE----------------------
@@ -32,20 +31,21 @@ bool Entity::getLife()
 }
 
 ///-----------------DIST-----------------------
-void Entity::setDist(float _distx,float _disty)
+void Entity::setDist(float _distx, float _disty)
 {
     distxy.x = _distx;
     distxy.y = _disty;
 }
-void Entity::increaseDist(float _distx,float _disty,unsigned short int type)
+void Entity::increaseDist(float _distx, float _disty, unsigned short int type)
 {
-    if(type==1)
+    if (type == 1)
     {
         distxy.x += _distx;
         distxy.y += _disty;
-    }else
+    }
+    else
     {
-            if(type==2)
+        if (type == 2)
         {
             distxy.x *= _distx;
             distxy.y *= _disty;
@@ -59,10 +59,10 @@ sf::Vector2f Entity::getDistxy()
 }
 
 ///--------------------POS---------------------
-void Entity::setPos(float _x,float _y)
+void Entity::setPos(float _x, float _y)
 {
-    pos.x=_x;
-    pos.y=_y;
+    pos.x = _x;
+    pos.y = _y;
 }
 
 sf::Vector2f Entity::getPos()
@@ -72,15 +72,15 @@ sf::Vector2f Entity::getPos()
 ///--------------------POS---------------------
 void Entity::updatePos()
 {
-    pos.x+=distxy.x;
-    pos.y+=distxy.y;
+    pos.x += distxy.x;
+    pos.y += distxy.y;
 }
 
 ///--------------------ANGLE-------------------
 
 void Entity::setAngle(float _angle)
 {
-    angle=_angle;
+    angle = _angle;
 }
 
 float Entity::getAngle()
@@ -90,10 +90,11 @@ float Entity::getAngle()
 
 void Entity::rotatexd(float rotation)
 {
-    angle+=rotation;
-    angle=fmodf(angle,360);
-    if(angle<0){
-        angle+=360;
+    angle += rotation;
+    angle = fmodf(angle, 360);
+    if (angle < 0)
+    {
+        angle += 360;
     }
 }
 ///--------------------RADIUS------------------
@@ -116,18 +117,26 @@ std::string Entity::getName()
 ///--------------------DRAW--------------------
 void Entity::draw(sf::RenderWindow &app)
 {
- getAnim().getSprite().setPosition(pos.x,pos.y);
- getAnim().getSprite().setRotation(angle+90);
- app.draw(getAnim().getSprite());
+    anim.setPosition(pos.x, pos.y);
+    anim.setRotation(angle + 90);
+    app.draw(anim);
 
- /*sf::CircleShape circle(radius);
+    /*sf::CircleShape circle(radius);
  circle.setFillColor(sf::Color(255,0,0,170));
  circle.setPosition(pos.x,pos.y);
  circle.setOrigin(radius,radius);
  app.draw(circle);*/
 }
 
-Animation &Entity::getAnim()
+void Entity::setAnim(Animation _anim)
 {
-    return anim;
+    anim=_anim;
+}
+void Entity::updateAnim()
+{
+    anim.update();
+}
+bool Entity::isEndAnim()
+{
+    return anim.isEnd();
 }

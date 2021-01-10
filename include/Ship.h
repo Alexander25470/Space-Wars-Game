@@ -13,7 +13,7 @@ class Ship: public Entity
         void advanceShip(bool);
         void update();
         bool isFeeded();
-        int &feed();
+        void addFeed(int);
 
 
 

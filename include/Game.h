@@ -27,6 +27,9 @@ class Game {
     sf::Font font;
     std::string language, highScoreString;
     std::thread t1;
+    sf::Text fpsText;
+    std::string fpsString;
+    bool updateFps;
 
     sf::RenderWindow &window1;
     sf::RectangleShape background;
@@ -59,7 +62,7 @@ class Game {
     SelectableText exitButton;
 
     std::list<Entity*> entities;
-    std::list<EnemyShip*> enemies;
+    ///std::list<EnemyShip*> enemies;
 
     Ship *ship;
     EnemyShip *enemyShip;

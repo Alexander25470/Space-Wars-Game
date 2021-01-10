@@ -6,7 +6,8 @@ int main()
 {
     srand(time(NULL));
 
-    Menu menu_l(1280,720,"asd");
+    Menu menu_1;
+    menu_1.initializer();
 
     return 0;
 }

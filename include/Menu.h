@@ -13,6 +13,7 @@
 
 class Menu
 {
+    sf::Image icon;
     const int vol=5;
     SelectableText backButton;
     sf::Font font;

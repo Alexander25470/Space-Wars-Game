@@ -4,19 +4,20 @@
 
 Asteroid::Asteroid()
 {
-    float x=rand()%16-8;
-    float y=rand()%16-8;
-    while((int)x==0){
-        x=rand()%8-4;
+    float x = rand() % 16 - 8;
+    float y = rand() % 16 - 8;
+    while ((int)x == 0)
+    {
+        x = rand() % 8 - 4;
     }
-    while((int)y==0){
-        y=rand()%8-4;
+    while ((int)y == 0)
+    {
+        y = rand() % 8 - 4;
     }
 
-    setDist(x,y);
+    setDist(x, y);
     setName("asteroid");
 }
-
 
 void Asteroid::update()
 {
@@ -25,10 +26,12 @@ void Asteroid::update()
 
     updatePos();
 
-    if(_Pos.x>width) setPos(0, _Pos.y);
-    if(_Pos.y>height) setPos(_Pos.x,0);
-    if(_Pos.x<0) setPos(width, _Pos.y);
-    if(_Pos.y<0) setPos(_Pos.x,height);
-
-
+    if (_Pos.x > width)
+        setPos(0, _Pos.y);
+    if (_Pos.y > height)
+        setPos(_Pos.x, 0);
+    if (_Pos.x < 0)
+        setPos(width, _Pos.y);
+    if (_Pos.y < 0)
+        setPos(_Pos.x, height);
 }

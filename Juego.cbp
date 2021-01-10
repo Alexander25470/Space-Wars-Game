@@ -54,6 +54,9 @@
 		<Unit filename="include/SelectableText.h" />
 		<Unit filename="include/Ship.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/Asteroid.cpp" />
 		<Unit filename="src/Bullet.cpp" />

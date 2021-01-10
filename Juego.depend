@@ -3094,21 +3094,26 @@
 1604327816 source:c:\users\usuario\desktop\juego\juego\src\bullet.cpp
 	"Bullet.h"
 
-1605563795 source:c:\users\usuario\desktop\juego 2\juego\main.cpp
+1607261195 source:c:\users\usuario\desktop\juego 2\juego\main.cpp
 	"Game.h"
 	"Menu.h"
 	<iostream>
 
-1606336504 c:\users\usuario\desktop\juego 2\juego\include\game.h
+1607430553 c:\users\usuario\desktop\juego 2\juego\include\game.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<SFML/System/Clock.hpp>
+	<SFML/Audio.hpp>
 	<windows.h>
 	"Asteroid.h"
 	<list>
+	<vector>
 	"Ship.h"
 	"Bullet.h"
 	"EnemyShip.h"
+	<string>
+	<thread>
+	"SelectableText.h"
 
 1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -3519,65 +3524,70 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1603578777 c:\users\usuario\desktop\juego 2\juego\include\asteroid.h
-	<Entity.h>
+1607265253 c:\users\usuario\desktop\juego 2\juego\include\asteroid.h
+	"Entity.h"
 	<SFML/Graphics.hpp>
 	<time.h>
 
-1605626741 c:\users\usuario\desktop\juego 2\juego\include\entity.h
+1607390095 c:\users\usuario\desktop\juego 2\juego\include\entity.h
 	<SFML/Graphics.hpp>
 	"Animation.h"
 	<math.h>
 
-1603580287 c:\users\usuario\desktop\juego 2\juego\include\animation.h
+1607389298 c:\users\usuario\desktop\juego 2\juego\include\animation.h
 	<SFML/Graphics.hpp>
 
-1604600326 c:\users\usuario\desktop\juego 2\juego\include\ship.h
-	<Entity.h>
+1607437077 c:\users\usuario\desktop\juego 2\juego\include\ship.h
+	"Entity.h"
 	<SFML/Graphics.hpp>
 
-1604326539 c:\users\usuario\desktop\juego 2\juego\include\bullet.h
-	<Entity.h>
+1607265227 c:\users\usuario\desktop\juego 2\juego\include\bullet.h
+	"Entity.h"
 
-1606337066 c:\users\usuario\desktop\juego 2\juego\include\menu.h
+1607430916 c:\users\usuario\desktop\juego 2\juego\include\menu.h
+	<fstream>
+	<iostream>
+	<string>
+	<cstring>
+	<vector>
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	<SFML/System/Clock.hpp>
 	"Game.h"
-	"SelectableItem.h"
+	"SelectableText.h"
 
-1603579059 source:c:\users\usuario\desktop\juego 2\juego\src\animation.cpp
+1607389365 source:c:\users\usuario\desktop\juego 2\juego\src\animation.cpp
 	"Animation.h"
 
-1606049424 source:c:\users\usuario\desktop\juego 2\juego\src\asteroid.cpp
+1607362467 source:c:\users\usuario\desktop\juego 2\juego\src\asteroid.cpp
 	"Asteroid.h"
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1605186669 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
+1607362435 source:c:\users\usuario\desktop\juego 2\juego\src\bullet.cpp
 	"Bullet.h"
 
-1605822153 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
+1607390085 source:c:\users\usuario\desktop\juego 2\juego\src\entity.cpp
 	"Entity.h"
 	<iostream>
 	<cmath>
 	<math.h>
 
-1606336883 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
+1607437035 source:c:\users\usuario\desktop\juego 2\juego\src\game.cpp
 	"Game.h"
 
-1606337067 source:c:\users\usuario\desktop\juego 2\juego\src\menu.cpp
+1607476436 source:c:\users\usuario\desktop\juego 2\juego\src\menu.cpp
 	"Menu.h"
 
-1605621581 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
+1607437088 source:c:\users\usuario\desktop\juego 2\juego\src\ship.cpp
 	"Ship.h"
 	<iostream>
 
-1605826354 c:\users\usuario\desktop\juego 2\juego\include\enemyship.h
-	<Entity.h>
+1607265260 c:\users\usuario\desktop\juego 2\juego\include\enemyship.h
+	"Entity.h"
 	<SFML/Graphics.hpp>
-	<windows.h>
 
-1606328517 source:c:\users\usuario\desktop\juego 2\juego\src\enemyship.cpp
+1607362436 source:c:\users\usuario\desktop\juego 2\juego\src\enemyship.cpp
 	"EnemyShip.h"
 	<math.h>
 	<iostream>
@@ -3585,9 +3595,124 @@
 	<cmath>
 	<math.h>
 
-1606334049 source:c:\users\usuario\desktop\juego 2\juego\src\selectableitem.cpp
+1606753606 source:c:\users\usuario\desktop\juego 2\juego\src\selectableitem.cpp
 	"SelectableItem.h"
 
 1606333423 c:\users\usuario\desktop\juego 2\juego\include\selectableitem.h
 	<SFML/Graphics.hpp>
+
+1607362451 source:c:\users\usuario\desktop\juego 2\juego\src\selectabletext.cpp
+	"SelectableText.h"
+	<iostream>
+
+1607262877 c:\users\usuario\desktop\juego 2\juego\include\selectabletext.h
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundfilefactory.inl
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1525812018 c:\users\usuario\desktop\juego 2\juego\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1607430716 source:c:\users\usuario\desktop\juego 2\juego\resource.rc
 

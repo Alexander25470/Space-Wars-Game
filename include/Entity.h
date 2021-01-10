@@ -18,7 +18,10 @@ class Entity
     public:
 
         Entity();
-        Animation &getAnim();
+        bool isEndAnim();
+        void updateAnim();
+        void setAnim(Animation);
+        ///--------------------------------------------
         void initializer(int w, int h,Animation &_anim, int _x,int _y, float _angle=0,int _radius=1);
         ///--------------------------------------------
         void setLife(bool _life);
